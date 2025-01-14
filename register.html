@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSmart Training Academy</title>
+    <link rel="stylesheet" href="style.css">
+        <script src="app.js" defer></script> <!-- 引入JavaScript文件 -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to TechSmart Training Academy</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('createUserPage')">Create User</a></li>
+                <li><a href="#" onclick="showPage('loginPage')">Login</a></li>
+                <li id="shoppingLink" style="display: none;"><a href="#" onclick="showPage('shoppingPage')">Shopping</a></li>
+                <li><a href="#" onclick="showPage('aboutPage')">About Us</a></li>
+                <li><a href="#" onclick="showPage('projectsPage')">Projects</a></li>
+                <li><a href="#" onclick="showPage('contactPage')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="createUserPage" class="page" style="display: none;">
+        <h2 class="page-title">创建新用户</h2>
+        <form id="createUserForm" class="form-container">
+            <div class="form-group">
+                <label for="username" class="form-label">用户名</label>
+                <input type="text" id="username" name="username" placeholder="请输入用户名" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">密码</label>
+                <input type="password" id="password" name="password" placeholder="请输入密码" required class="form-input">
+            </div>
+            <button type="submit" class="submit-btn">创建用户</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("createUserForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 防止表单提交时刷新页面
+            createUser(); // 调用创建用户函数
+        });
+    
+        function createUser() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            console.log("创建用户:", username, password);
+        }
+    </script>
+    
+    <style>
+    
+        .page-title {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    
+        /* 表单容器 */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        /* 表单项 */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .form-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+    
+        .form-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+    
+        .form-input:focus {
+            border-color: #4CAF50;
+        }
+    
+        /* 提交按钮 */
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .page {
+                padding: 15px;
+            }
+    
+            .form-input, .submit-btn {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+    
+    <div id="loginPage" class="page" style="display: none;">
+        <!-- Login -->
+        <h2 class="login-title">Login</h2>
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="loginUsername" class="form-label">Username</label>
+                <input type="text" id="loginUsername" placeholder="Username" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" id="loginPassword" placeholder="Password" class="form-input" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+    
+    <script>
+        // 防止表单提交时页面刷新
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            login(); // 调用登录函数
+        });
+    
+        function login() {
+            const username = document.getElementById("loginUsername").value;
+            const password = document.getElementById("loginPassword").value;
+            console.log("登录:", username, password);
+        }
+    </script>
+    
+    <style>
+    
+        .login-title {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    
+        /* 登录表单容器 */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        /* 表单项 */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .form-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+    
+        .form-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+    
+        .form-input:focus {
+            border-color: #4CAF50;
+        }
+    
+        /* 登录按钮 */
+        .login-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .login-btn:hover {
+            background-color: #45a049;
+        }
+    
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .page {
+                padding: 15px;
+            }
+    
+            .form-input, .login-btn {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+    
+    
+
+    <div id="shoppingPage" class="page" style="display: none;">
+        <!-- Shopping Page -->
+        <h2>Shopping Page</h2>
+
+        <h3>IT Courses</h3>
+        <div class="container">
+            <div class="product">
+                <h4>Course 1: Introduction to Programming</h4>
+                <p>Price: $100</p>
+                <p>Description: Learn the basics of programming using Python.</p>
+                <input type="number" id="courseQuantity1" placeholder="Quantity">
+                <button onclick="addToCart('Introduction to Programming', 100, document.getElementById('courseQuantity1').value)">Enroll</button>
+            </div>
+            <div class="product">
+                <h4>Course 2: Web Development</h4>
+                <p>Price: $150</p>
+                <p>Description: Comprehensive training on HTML, CSS, and JavaScript.</p>
+                <input type="number" id="courseQuantity2" placeholder="Quantity">
+                <button onclick="addToCart('Web Development', 150, document.getElementById('courseQuantity2').value)">Enroll</button>
+            </div>
+            <div class="product">
+                <h4>Course 3: Database Management</h4>
+                <p>Price: $200</p>
+                <p>Description: Understand the fundamentals of SQL and database design.</p>
+                <input type="number" id="courseQuantity3" placeholder="Quantity">
+                <button onclick="addToCart('Database Management', 200, document.getElementById('courseQuantity3').value)">Enroll</button>
+            </div>
+            <div class="product">
+                <h4>Course 4: Cyber Security Basics</h4>
+                <p>Price: $250</p>
+                <p>Description: Introduction to cybersecurity principles and practices.</p>
+                <input type="number" id="courseQuantity4" placeholder="Quantity">
+                <button onclick="addToCart('Cyber Security Basics', 250, document.getElementById('courseQuantity4').value)">Enroll</button>
+            </div>
+            <div class="product">
+                <h4>Course 5: Cloud Computing Essentials</h4>
+                <p>Price: $300</p>
+                <p>Description: Learn about cloud services and deployment models.</p>
+                <input type="number" id="courseQuantity5" placeholder="Quantity">
+                <button onclick="addToCart('Cloud Computing Essentials', 300, document.getElementById('courseQuantity5').value)">Enroll</button>
+            </div>
+        </div>
+
+        <h3>Training Resource Kits</h3>
+        <div class="container">
+            <div class="product">
+                <h4>Resource Kit 1: Python Essentials</h4>
+                <p>Price: $10.00</p>
+                <p>Description: A complete kit for teaching Python basics.</p>
+                <input type="number" id="resourceQuantity1" placeholder="Quantity">
+                <button onclick="addToCart('Python Essentials', 10, document.getElementById('resourceQuantity1').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h4>Resource Kit 2: JavaScript Fundamentals</h4>
+                <p>Price: $20.00</p>
+                <p>Description: Tools and materials for teaching JavaScript.</p>
+                <input type="number" id="resourceQuantity2" placeholder="Quantity">
+                <button onclick="addToCart('JavaScript Fundamentals', 20, document.getElementById('resourceQuantity2').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h4>Resource Kit 3: HTML & CSS Starter</h4>
+                <p>Price: $30.00</p>
+                <p>Description: Essential resources for web design courses.</p>
+                <input type="number" id="resourceQuantity3" placeholder="Quantity">
+                <button onclick="addToCart('HTML & CSS Starter', 30, document.getElementById('resourceQuantity3').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h4>Resource Kit 4: Data Science Toolkit</h4>
+                <p>Price: $40.00</p>
+                <p>Description: A comprehensive toolkit for data science education.</p>
+                <input type="number" id="resourceQuantity4" placeholder="Quantity">
+                <button onclick="addToCart('Data Science Toolkit', 40, document.getElementById('resourceQuantity4').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h4>Resource Kit 5: Cybersecurity Training Kit</h4>
+                <p>Price: $50.00</p>
+                <p>Description: Essential materials for cybersecurity training.</p>
+                <input type="number" id="resourceQuantity5" placeholder="Quantity">
+                <button onclick="addToCart('Cybersecurity Training Kit', 50, document.getElementById('resourceQuantity5').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h4>Resource Kit 6: Agile Project Management</h4>
+                <p>Price: $60.00</p>
+                <p>Description: Resources for teaching Agile methodologies.</p>
+                <input type="number" id="resourceQuantity6" placeholder="Quantity">
+                <button onclick="addToCart('Agile Project Management', 60, document.getElementById('resourceQuantity6').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h4>Resource Kit 7: Cloud Fundamentals Kit</h4>
+                <p>Price: $70.00</p>
+                <p>Description: Teaching materials for cloud computing basics.</p>
+                <input type="number" id="resourceQuantity7" placeholder="Quantity">
+                <button onclick="addToCart('Cloud Fundamentals Kit', 70, document.getElementById('resourceQuantity7').value)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h4>Resource Kit 8: IoT Essentials</h4>
+                <p>Price: $80.00</p>
+                <p>Description: Comprehensive resources for teaching IoT concepts.</p>
+                <input type="number" id="resourceQuantity8" placeholder="Quantity">
+                <button onclick="addToCart('IoT Essentials', 80, document.getElementById('resourceQuantity8').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="cart">
+                <h2>Shopping Cart</h2>
+                <div id="cart-items"></div>
+                <p>Total: $<span id="total-price">0</span></p>
+                <button onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutPage" class="page" style="display: none;">
+        <!-- About Us -->
+        <h2 class="about-title">About Us</h2>
+        <p class="about-description">TechSmart Training Academy is dedicated to providing top-quality IT education to students across Australia. Our goal is to equip future professionals with the practical skills and knowledge they need to succeed in the dynamic tech industry. We believe that education should be accessible, engaging, and effective.</p>
+        
+        <!-- Latest Developments Section -->
+        <div class="about-section">
+            <p><strong class="section-title">Latest Developments:</strong></p>
+            <p class="about-text">We have recently launched two new advanced IT courses: "Artificial Intelligence Fundamentals" and "Data Analytics Using Python". Additionally, we’ve partnered with local businesses to offer internships for our students, making it easier for them to gain real-world experience. We are also expanding our training resource kits to meet the growing demand for online education.</p>
+        </div>
+    
+        <!-- Our Vision Section -->
+        <div class="about-section">
+            <p><strong class="section-title">Our Vision:</strong></p>
+            <p class="about-text">At TechSmart, we envision a future where technology empowers individuals to solve global challenges. We aim to create a world where education is a bridge to personal and professional growth, and where our students are leaders in technology, innovation, and ethical practices.</p>
+        </div>
+    
+        <!-- Courses Overview Section -->
+        <div class="about-section">
+            <p><strong class="section-title">Our Courses:</strong></p>
+            <p class="about-text">We offer a variety of courses designed to meet the needs of students at different stages of their careers. Our curriculum includes hands-on, project-based learning that prepares students for real-world scenarios. Here are some of our most popular courses:</p>
+            <ul class="course-list">
+                <li>Introduction to Programming</li>
+                <li>Web Development with JavaScript</li>
+                <li>Mobile App Development with Swift</li>
+                <li>Data Science with Python</li>
+                <li>Artificial Intelligence and Machine Learning</li>
+            </ul>
+        </div>
+    
+        <!-- Student Testimonials Section -->
+        <div class="about-section">
+            <p><strong class="section-title">What Our Students Say:</strong></p>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-quote">"TechSmart’s hands-on approach to learning has been invaluable. I landed my first job as a software developer, thanks to the skills I learned here!"</p>
+                    <p class="testimonial-author">- Sarah L., Graduate, Software Developer</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">"The instructors at TechSmart are industry experts who truly care about our success. I feel prepared for my career in data science!"</p>
+                    <p class="testimonial-author">- James P., Graduate, Data Scientist</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Contact Information Section -->
+        <div class="about-section">
+            <p><strong class="section-title">Contact Us:</strong></p>
+            <p class="about-text">For more information or to enroll in our programs, please get in touch with us:</p>
+            <ul class="contact-info">
+                <li>Email: <a href="mailto:info@techsmart.com.au">info@techsmart.com.au</a></li>
+                <li>Phone: 1800-123-456</li>
+                <li>Address: 123 TechSmart Avenue, Sydney, Australia</li>
+            </ul>
+        </div>
+    </div>
+    
+    <style>
+        /* 页面整体布局 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* 页面标题 */
+        .about-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    
+        /* 段落内容样式 */
+        .about-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+    
+        /* 小节标题 */
+        .about-section {
+            margin-top: 20px;
+        }
+    
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    
+        /* 小节内容 */
+        .about-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+    
+        /* 课程列表 */
+        .course-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #555;
+        }
+    
+        /* 学生推荐语 */
+        .testimonials {
+            margin-top: 10px;
+            background-color: #e9f5e9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    
+        .testimonial {
+            margin-bottom: 15px;
+        }
+    
+        .testimonial-quote {
+            font-style: italic;
+            color: #333;
+        }
+    
+        .testimonial-author {
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 5px;
+        }
+    
+        /* 联系信息 */
+        .contact-info {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    
+        .contact-info li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+    
+        .contact-info a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .page {
+                padding: 15px;
+            }
+    
+            .about-title {
+                font-size: 24px;
+            }
+    
+            .about-description,
+            .about-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+    
+
+    <div id="projectsPage" class="page" style="display: none;">
+      <section>
+        <h2>Student Projects</h2>
+        <div class="container">
+            <div class="product">
+                <h4>Product 1: E-Commerce Website</h4>
+                <p class="description">A fully functional e-commerce website built using HTML, CSS, and JavaScript...</p>
+            </div>
+
+            <div class="product">
+                <h4>Product 2: Inventory Management System</h4>
+                <p class="description">A web-based application that manages product inventory using PHP and MySQL...</p>
+            </div>
+
+            <div class="product">
+                <h4>Product 3: Mobile App for Task Management</h4>
+                <p class="description">A mobile application developed using React Native for managing tasks...</p>
+            </div>
+
+            <div class="product">
+                <h4>Product 4: Personal Finance Tracker</h4>
+                <p class="description">A Python application that helps users track their expenses and budgets...</p>
+            </div>
+
+            <div class="product">
+                <h4>Product 5: Blogging Platform</h4>
+                <p class="description">A full-stack blogging platform created with Node.js and Express...</p>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #productsPage {
+            display: block;
+            padding: 20px;
+        }
+
+        section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            overflow-x: auto; /* 使产品可以水平滚动 */
+            gap: 20px;
+            justify-content: flex-start; /* 从左到右排列 */
+            padding-bottom: 20px; /* 为了滚动条的可见性 */
+        }
+
+        .product {
+            width: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            background-color: white;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h4 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #f30;
+        }
+
+        .buy-button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+        }
+    </style>
+
+    <div id="contactPage" class="page" style="display: none;">
+      <section>        
+        <h2>Contact Us</h2>
+        <p><strong>RTO Name:</strong> XYZ Training Institute Pty Ltd</p>
+        <p><strong>RTO Registration Number:</strong> RTO 123456</p>
+        <p><strong>RAddress:</strong> 123 Training Street, Sydney, NSW 2000, Australia</p>
+        <p><strong>Telephone Number:</strong>+61 2 1234 5678</p>
+        <p><strong>Email Address:</strong>info@xyztraining.edu.au</p>
+      </section>
+    </div>
+
+<img class="hero-image" src="https://wallpaperaccess.com/full/1772051.jpg" alt="hero">
+
+    <footer>
+        <p>&copy; 2024 RTO Training. All rights reserved.</p>
+    </footer>
+</body>
+</html>
