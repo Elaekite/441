@@ -13,6 +13,24 @@ body {
     line-height: 1.6;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 140px;  /* Set logo image width */
+    height: auto;
+    margin-right: 50px;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
 /* Header and Navigation */
 header {
     background-color:  #333;
