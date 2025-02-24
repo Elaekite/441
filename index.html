@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechSmart Training Academy</title>
     <link rel="stylesheet" href="style.css">
-        <script src="app.js" defer></script> <!-- 引入JavaScript文件 -->
+        <script src="app.js" defer></script> 
 </head>
 <body>
     <header>
@@ -42,8 +42,8 @@
     
     <script>
         document.getElementById("createUserForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // 防止表单提交时刷新页面
-            createUser(); // 调用创建用户函数
+            event.preventDefault(); 
+            createUser(); 
         });
     
         function createUser() {
@@ -62,14 +62,12 @@
             margin-bottom: 20px;
         }
     
-        /* 表单容器 */
         .form-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-    
-        /* 表单项 */
+ 
         .form-group {
             display: flex;
             flex-direction: column;
@@ -94,7 +92,6 @@
             border-color: #4CAF50;
         }
     
-        /* 提交按钮 */
         .submit-btn {
             background-color: #4CAF50;
             color: white;
@@ -109,8 +106,7 @@
         .submit-btn:hover {
             background-color: #45a049;
         }
-    
-        /* 响应式设计 */
+
         @media (max-width: 600px) {
             .page {
                 padding: 15px;
@@ -140,10 +136,9 @@
     </div>
     
     <script>
-        // 防止表单提交时页面刷新
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            login(); // 调用登录函数
+            login();
         });
     
         function login() {
@@ -161,15 +156,13 @@
             color: #333;
             margin-bottom: 20px;
         }
-    
-        /* 登录表单容器 */
+
         .login-form {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
     
-        /* 表单项 */
         .form-group {
             display: flex;
             flex-direction: column;
@@ -193,8 +186,7 @@
         .form-input:focus {
             border-color: #4CAF50;
         }
-    
-        /* 登录按钮 */
+   
         .login-btn {
             background-color: #4CAF50;
             color: white;
@@ -209,8 +201,7 @@
         .login-btn:hover {
             background-color: #45a049;
         }
-    
-        /* 响应式设计 */
+   
         @media (max-width: 600px) {
             .page {
                 padding: 15px;
@@ -337,7 +328,7 @@
             </div>
         </div>
     </div>
-
+<main>
     <div id="aboutPage" class="page" style="display: none;">
         <!-- About Us -->
         <h2 class="about-title">About Us</h2>
@@ -393,37 +384,33 @@
                 <li>Address: 123 TechSmart Avenue, Sydney, Australia</li>
             </ul>
         </div>
-         <div class="section">
+        <div class="section">
             <img src="R-C.jpg" alt="R-C">
         </div>
     </div>
-    
+</main>
     <style>
-        /* 页面整体布局 */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
-    
-        /* 页面标题 */
+
         .about-title {
             text-align: center;
             font-size: 28px;
             color: #333;
             margin-bottom: 20px;
         }
-    
-        /* 段落内容样式 */
+   
         .about-description {
             font-size: 16px;
             line-height: 1.6;
             color: #555;
             margin-bottom: 20px;
         }
-    
-        /* 小节标题 */
+ 
         .about-section {
             margin-top: 20px;
         }
@@ -433,22 +420,19 @@
             font-weight: bold;
             color: #4CAF50;
         }
-    
-        /* 小节内容 */
+   
         .about-text {
             font-size: 16px;
             line-height: 1.6;
             color: #555;
         }
     
-        /* 课程列表 */
         .course-list {
             list-style-type: disc;
             margin-left: 20px;
             color: #555;
         }
     
-        /* 学生推荐语 */
         .testimonials {
             margin-top: 10px;
             background-color: #e9f5e9;
@@ -471,7 +455,6 @@
             margin-top: 5px;
         }
     
-        /* 联系信息 */
         .contact-info {
             list-style-type: none;
             padding-left: 0;
@@ -487,8 +470,7 @@
             color: #4CAF50;
             text-decoration: none;
         }
-    
-        /* 响应式设计 */
+   
         @media (max-width: 600px) {
             .page {
                 padding: 15px;
@@ -504,35 +486,34 @@
             }
         }
     </style>
-    
 
     <div id="projectsPage" class="page" style="display: none;">
       <section>
         <h2>Student Projects</h2>
         <div class="container">
             <div class="product">
-                <h4>Product 1: E-Commerce Website</h4>
-                <p class="description">A fully functional e-commerce website built using HTML, CSS, and JavaScript...</p>
+                <h4>Code 1: ICT20120</h4>
+                <p class="description">Certificate II in Applied Digital Technologies</p>
             </div>
 
             <div class="product">
-                <h4>Product 2: Inventory Management System</h4>
-                <p class="description">A web-based application that manages product inventory using PHP and MySQL...</p>
+                <h4>Code 2: ICT20219</h4>
+                <p class="description">Certificate II in Telecommunications Network Build and Operation</p>
             </div>
 
             <div class="product">
-                <h4>Product 3: Mobile App for Task Management</h4>
-                <p class="description">A mobile application developed using React Native for managing tasks...</p>
+                <h4>Code 3: ICT20319</h4>
+                <p class="description">Certificate II in Telecommunications Technology</p>
             </div>
 
             <div class="product">
-                <h4>Product 4: Personal Finance Tracker</h4>
-                <p class="description">A Python application that helps users track their expenses and budgets...</p>
+                <h4>Code 4: ICT30120</h4>
+                <p class="description">Certificate III in Information Technology</p>
             </div>
 
             <div class="product">
-                <h4>Product 5: Blogging Platform</h4>
-                <p class="description">A full-stack blogging platform created with Node.js and Express...</p>
+                <h4>Code 5: ICT30419</h4>
+                <p class="description">Certificate III in Telecommunications Network Build and Operation</p>
             </div>
         </section>
     </div>
@@ -563,10 +544,10 @@
 
         .container {
             display: flex;
-            overflow-x: auto; /* 使产品可以水平滚动 */
+            overflow-x: auto; 
             gap: 20px;
-            justify-content: flex-start; /* 从左到右排列 */
-            padding-bottom: 20px; /* 为了滚动条的可见性 */
+            justify-content: flex-start; 
+            padding-bottom: 20px; 
         }
 
         .product {
